@@ -65,10 +65,12 @@ function loadChapter(chapter) {
 
 // Load chapter based on URL hash when the page loads
 window.addEventListener('load', () => {
-    const chapter = window.location.hash.substring(1); // Remove the '#' from the hash
-    if (chapter) {
-        loadChapter(chapter);
+    let chapter = window.location.hash.substring(1); // Remove the '#' from the hash
+    if (!chapter) {
+        chapter = 'intro'; // Default to 'intro' if no chapter is found
     }
+    loadChapter(chapter);
+
     // Translate navbar based on the selected language
     const lang = document.querySelector('.idiom-selector').getAttribute('data-lang') || 'en';
     translateNavbar(lang);

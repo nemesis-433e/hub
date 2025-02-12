@@ -1,7 +1,7 @@
 :root {
     --background-color: #111;
     --text-color: white;
-    --top-bar: rgb(48, 2, 78);
+    --top-bar: rgb(77, 7, 124);
     --callout: rgb(70, 70, 70);
 }
 
@@ -83,7 +83,7 @@ body {
 
 .idiom-selector {
     /* position: relative; */
-    margin: auto 5px auto auto;
+    margin: auto 10px auto auto;
 }
 
 .selected-idiom {
