@@ -1,0 +1,84 @@
+/* Wrapper for centering everything */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    margin: 50px 10px 0;
+}
+.wrapper h1{ margin-bottom: 0px;}
+
+/* Header container */
+.content-container {
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 5px 0;
+}
+
+/* Grid layout for topics */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-adjusting columns */
+    gap: 16px;
+    padding: 10px;
+    max-width: 900px;
+    margin: auto;
+    justify-content: center; /* Center the entire grid */
+}
+
+/* Topic boxes */
+.topic {
+    color: var(--text-color);  /* Use your custom text color */
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    height: 50px;
+    min-width: 250px;
+    max-width: 250px;
+    position: relative; /* Ensure the pseudo-element is positioned correctly */
+    z-index: 1; /* Makes sure text appears on top of the image */
+}
+
+.topic::before {
+    content: '';
+    position: absolute;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: var(--bg-image); /* Use the background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;  /* Adjust opacity of the background image */
+    z-index: -1; /* Places the image behind the text */
+}
+
+.title{
+    margin-top: -15px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.description{
+    margin: -10px auto 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+a, .topic, .description, .title,  
+.topic:visited, .description:visited, .title:visited,  
+.topic:hover, .description:hover, .title:hover { text-decoration: none; }
+/* media queries xd */
+@media (max-width: 960px) {
+    .content-grid {
+        grid-template-columns: repeat(2, minmax(250px, 1fr)); /* Force 2 columns */
+    }
+}
+
+@media (max-width: 640px) {
+    .content-grid {
+        grid-template-columns: 1fr; /* Single column */
+    }
+}

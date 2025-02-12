@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Chapter Navigation</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/guides.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <button class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <button class="home">
+            <a href="/hub.html">
+                <i class="fa-solid fa-house"></i>
+            </a>
+        </button>
+        <div class="idiom-selector">
+            <div class="selected-idiom">
+                <img src="/files/flags/en.svg" alt="English" class="flag-icon">
+            </div>
+            <div class="idiom-dropdown">
+                <div class="idiom-option" data-lang="en">
+                    <img src="/files/flags/en.svg" alt="English" class="flag-icon">
+                    <span>English</span>
+                </div>
+                <div class="idiom-option" data-lang="br">
+                    <img src="/files/flags/br.svg" alt="Português (BR)" class="flag-icon">
+                    <span>Português (BR)</span>
+                </div>
+            </div>
+        </div>
+        <button id="theme-toggle">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+        <nav>
+            <button class="close-btn">
+                <i class="fa-solid fa-x"></i>
+            </button>
+            <ul>
+                <li class="section-title" data-i18n="section1">Section 1</li>
+                <li onclick="window.location.hash = 'chapter1a'; loadChapter('chapter1a')" data-i18n="chapter1a"></li>
+                <li onclick="window.location.hash = 'chapter1b'; loadChapter('chapter1b')" data-i18n="chapter1b"></li>
+    
+                <li class="section-title" data-i18n="section2">Section 2</li>
+                <li onclick="window.location.hash = 'chapter2a'; loadChapter('chapter2a')" data-i18n="chapter2a">Chapter 3</li>
+                <li onclick="window.location.hash = 'chapter2b'; loadChapter('chapter2b')" data-i18n="chapter2b">Chapter 4</li>
+            </ul>
+        </nav>
+    <div class="content" id="content">
+        <h1>Welcome</h1>
+        <p>Select a chapter from the menu.</p>
+    </div>
+    <script src="/locale/pt-guide.js"></script>
+    <script src="/js/global.js"></script>
+    <script src="/js/guides.js"></script>
+</body>
+</html>

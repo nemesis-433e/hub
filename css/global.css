@@ -1,0 +1,152 @@
+:root {
+    --background-color: #111;
+    --text-color: white;
+    --top-bar: rgb(48, 2, 78);
+    --callout: rgb(70, 70, 70);
+}
+
+[data-theme="light"] {
+    --background-color: rgb(228, 228, 228);
+    --text-color: black;
+    --top-bar: rgb(138, 74, 163);
+    --callout: rgb(173, 173, 173);
+}
+body {
+    display: flex;
+    margin: 0;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: "Noto Sans JP", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+.home{
+    margin: auto 0 auto;
+    display: block;
+    background-color: transparent;
+    font-weight: bolder;
+    font-size: x-large;
+    background: var(--top-bar);
+    color: var(--text-color);
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+
+}
+.top-bar{
+    position: fixed;
+    background-color: var(--top-bar);
+    display: flex;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    z-index: 5;
+}
+.hamburger {
+    display: none;
+    font-weight: bolder;
+    font-size: x-large;
+    background: var(--top-bar);
+    color: var(--text-color);
+    padding: 10px;
+    font-size: 25px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.close-btn {
+    display: none; /* Hide close button by default */
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    color: var(--text-color);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+#theme-toggle {
+    /* position: fixed; */
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    color: var(--text-color);
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.idiom-selector {
+    /* position: relative; */
+    margin: auto 5px auto auto;
+}
+
+.selected-idiom {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.selected-idiom img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.idiom-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: var(--background-color);
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.idiom-dropdown .idiom-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+.idiom-option:hover{
+    background-color: var(--top-bar);
+}
+
+.idiom-dropdown .idiom-option img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+.fa-solid, .fa-house {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    nav {
+        transform: translateX(-100%); /* Hide nav by default on mobile */
+    }
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+    nav.show {
+        transform: translateX(0); /* Show nav when .show class is added */
+    }
+    .content {
+        margin-left: 0;
+    }
+    nav.show .close-btn {
+        display: block; /* Show close button when nav is open */
+    }
+}
