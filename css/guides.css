@@ -52,7 +52,7 @@ nav ul li {
 }
 h1{color: rgb(111, 1, 255);}
 h2{color: rgb(175, 114, 253);}
-
+.highlight{color: rgb(175, 114, 253); font-weight: bold;}
 .hamburger {
     display: none;
     font-weight: bolder;
