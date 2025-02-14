@@ -5,7 +5,7 @@ const translations = {
         // 
         topic1: "<p class='title'>Informal Portuguese</p3><p class='description'>Informal speech, Slangs, Regionalism</p>",
         topic2: "<p class='title'>Japanese</p3><p class='description'>Japanese Guide, anime based</p>",
-        topic3: "<span style='color:red'><p class='title'>Kana Drills(off)</p3><p class='description'>JP writting system drills</p></span>"
+        topic3: "<p class='title'>Kana Drills(off)</p3><p class='description'>JP writting system drills</p>"
     },
     br: {
         intro1: "BEM-VINDO",
@@ -13,6 +13,6 @@ const translations = {
 
         topic1: "<p class='title'>Português Informal</p3><p class='description'>Discurso informal, Gírias, Regionalismos</p>",
         topic2: "<p class='title'>Guia Japonês</p3><p class='description'>Um guia baseado em Anime</p>",
-        topic3: "<span style='color:red'><p class='title'>Kana Drills(off)</p3><p class='description'>Pratique os caracteres japoneses </p></span>"
+        topic3: "<p class='title'>Kana Drills(off)</p3><p class='description'>Pratique os caracteres japoneses </p>"
     }
 };
