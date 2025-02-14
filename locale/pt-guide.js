@@ -1,5 +1,6 @@
 const translations = {
     en: {
+        intro: "Introduction",
         section1: "VERBS",
         section2: "MAGIC WORDS",
         chapter1a: "Verb \"Ir\"",
@@ -8,6 +9,7 @@ const translations = {
         chapter2b: "Curse Words",
     },
     br: {
+        intro: "Introdução",
         section1: "VERBOS",
         section2: "PALAVRAS MÁGICAS",
         chapter1a: "Verbo Ir",
