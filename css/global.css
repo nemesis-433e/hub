@@ -8,7 +8,7 @@
 [data-theme="light"] {
     --background-color: rgb(228, 228, 228);
     --text-color: black;
-    --top-bar: #9460c2;;
+    --top-bar: #9460c2;
     --callout: rgb(173, 173, 173);
 }
 body {
