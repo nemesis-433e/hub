@@ -1,15 +1,3 @@
-.home{
-    margin: auto 0 auto;
-    display: block;
-    background-color: transparent;
-    font-weight: bolder;
-    font-size: x-large;
-    background: var(--top-bar);
-    color: var(--text-color);
-    font-size: 25px;
-    border: none;
-    cursor: pointer;
-}
 
 nav {
     margin-top: 50px;
@@ -79,63 +67,6 @@ h2{color: rgb(175, 114, 253);}
     z-index: 1001;
 }
 
-#theme-toggle {
-    top: 15px;
-    right: 15px;
-    background: transparent;
-    color: var(--text-color);
-    border: none;
-    font-size: 25px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.idiom-selector {
-    margin: auto 5px auto auto;
-}
-
-.selected-idiom {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.selected-idiom img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.idiom-dropdown {
-    display: none;
-    position: absolute;
-    top: 40px;
-    right: 0;
-    background: var(--background-color);
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    padding: 10px;
-    z-index: 1000;
-}
-
-.idiom-dropdown .idiom-option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 5px;
-    cursor: pointer;
-}
-.idiom-option:hover{
-    background-color: var(--top-bar);
-}
-
-.idiom-dropdown .idiom-option img {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-}
 .callout{
     background-color: var(--callout);
     margin-left: 10px;

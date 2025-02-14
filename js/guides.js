@@ -51,17 +51,24 @@ function translateNavbar(lang) {
 
 // Load chapter based on language and chapter name
 function loadChapter(chapter) {
+    if (window.innerWidth < 768 && document.querySelector('nav').classList.contains('show')) {
+        document.querySelector('nav').classList.toggle('show');
+    }
     const lang = document.querySelector('.idiom-selector').getAttribute('data-lang') || 'en';
     fetch(`chapters/${lang}/${chapter}.html`)
         .then(response => response.text())
         .then(data => {
             document.getElementById('content').innerHTML = data;
             window.location.hash = chapter; // Update URL hash
+
+            // If screen width is less than 768px, toggle navigation
         })
         .catch(error => {
-            document.getElementById('content').innerHTML = "<h1 style='color=red'>Error</h1><p>UNDER CONSTRUCTION</p>";
+            document.getElementById('content').innerHTML = "<h1 style='color:red'>Error</h1><p>UNDER CONSTRUCTION</p>";
         });
+
 }
+
 
 // Load chapter based on URL hash when the page loads
 window.addEventListener('load', () => {

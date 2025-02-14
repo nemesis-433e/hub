@@ -55,6 +55,8 @@ themeToggle.addEventListener('click', () => {
     const icon = themeToggle.querySelector('i');
     icon.classList.toggle('fa-moon', newTheme === 'dark');
     icon.classList.toggle('fa-sun', newTheme === 'light');
+    console.log("Hello from VS Code!");
+
 });
 
 // Set initial theme icon
