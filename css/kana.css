@@ -1,8 +1,10 @@
 :root{
     --card-color: #272727;
+    --answer-color: #9460c2;
 }
 [data-theme="light"] {
     --card-color: #ffffff;
+    --answer-color: #9460c2;
 }
 /* Ensure html and body take full viewport height */
 html, body {
@@ -89,7 +91,7 @@ body {
 
 .answer {
     font-size: 36px;
-    color: var(--top-bar);
+    color: var(--answer-color);
     margin-bottom: 0;
     margin-top: -7px;
 }
