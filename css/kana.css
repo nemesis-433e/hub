@@ -74,6 +74,7 @@ body {
 .kana-overlay {
     width: 100%;
     text-align: center;
+    margin: auto;
     background: #9460C2;
     color: var(--text-color);
     font-family: 'Noto Sans JP', sans-serif;
@@ -120,8 +121,9 @@ body {
     background: #9460C2;
     color: white;
     font-size: 24px;
+    font-weight: 700;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-radius: 15px;
     cursor: pointer;
     margin-top: 10px;
@@ -165,4 +167,25 @@ body {
         text-align: center;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
+}
+@media (max-height: 650px){
+    .card{
+        height: 80%;
+    }
+    .image-container, .image-container img{
+        font-size: 30px;
+    }
+    .kana-overlay{
+        padding: 0px;
+    }
+    .next-button{
+        position: relative;
+        bottom: 50px;
+        left: 130px;
+        width: 30px;
+        font-size: 15px;
+        font-display: hidden;
+        z-index: 5;
+    }
+
 }
