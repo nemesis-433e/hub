@@ -5,13 +5,11 @@ idiomSelector.addEventListener('click', function (event) {
     const dropdown = this.querySelector('.idiom-dropdown');
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
-
 // Close the dropdown when clicking outside
 document.addEventListener('click', function () {
     const dropdown = document.querySelector('.idiom-dropdown');
     dropdown.style.display = 'none';
 });
-
 // Handle idiom selection
 document.querySelectorAll('.idiom-option').forEach(option => {
     option.addEventListener('click', () => {
@@ -22,9 +20,7 @@ document.querySelectorAll('.idiom-option').forEach(option => {
         const selectedFlag = document.querySelector('.selected-idiom img');
         selectedFlag.src = `../files/flags/${lang === 'en' ? 'en' : 'br'}.svg`;
         localStorage.setItem('lang', lang);
-        // Translate the navbar
-        // translateNavbar(lang);
-        // Translate any il18n
+        
         changeLanguage(lang);
         // Reload the current chapter in the new language
         const chapter = window.location.hash.substring(1);
@@ -55,7 +51,6 @@ themeToggle.addEventListener('click', () => {
     const icon = themeToggle.querySelector('i');
     icon.classList.toggle('fa-moon', newTheme === 'dark');
     icon.classList.toggle('fa-sun', newTheme === 'light');
-    console.log("Hello from VS Code!");
 
 });
 

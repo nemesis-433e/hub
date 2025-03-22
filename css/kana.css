@@ -6,7 +6,8 @@
     --card-color: #ffffff;
     --answer-color: #9460c2;
 }
-/* Ensure html and body take full viewport height */
+
+/*  */
 html, body {
     height: 100%;
     margin: 0;
@@ -16,7 +17,6 @@ html, body {
     min-height: 628px;
 }
 
-/* Container takes all available space */
 .container {
     flex: 1; /* Allows it to stretch and push bottom bar down */
     display: flex;
@@ -34,7 +34,7 @@ body {
     align-items: center;
     
 }
-/* Container  */
+
 .container {
     margin: 50px auto 50px auto;
     display: flex;
@@ -44,10 +44,9 @@ body {
     min-height: calc(100vh - 200px); /* Ensures full height */
 }
 
-/* Miyamura Card */
 .card {
     background: var(--card-color);
-    width: 90%;
+    width: 95%;
     max-width: 350px;
     border-radius: 15px;
     margin: auto auto auto auto;
@@ -85,7 +84,6 @@ body {
     border-radius: 0 0 15px 15px;
 }
 
-/* Text Section */
 .text-container {
     padding: 15px 0;
 }
@@ -116,7 +114,6 @@ body {
     color: #898989;
 }
 
-/* Next Button */
 .next-button {
     background: #9460C2;
     color: white;
@@ -142,6 +139,27 @@ body {
 }
 
 /* Responsive Design */
+@media (max-height: 650px){
+    .card{
+        height: 80%;
+    }
+    .image-container, .image-container img{
+        font-size: 30px;
+    }
+    .kana-overlay{
+        padding: 0px;
+    }
+    .next-button{
+        position: relative;
+        bottom: 47px;
+        left: 145px;
+        width: 70px;
+        font-size: 15px;
+        font-display: hidden;
+        z-index: 5;
+    }
+
+}
 
 @media (max-width: 400px) {
     .name {
@@ -158,6 +176,7 @@ body {
     }
     .next-button {
         font-size: 20px;
+        position: static;
     }
     .card {
         width: 80%;
@@ -167,25 +186,4 @@ body {
         text-align: center;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
-}
-@media (max-height: 650px){
-    .card{
-        height: 80%;
-    }
-    .image-container, .image-container img{
-        font-size: 30px;
-    }
-    .kana-overlay{
-        padding: 0px;
-    }
-    .next-button{
-        position: relative;
-        bottom: 50px;
-        left: 130px;
-        width: 30px;
-        font-size: 15px;
-        font-display: hidden;
-        z-index: 5;
-    }
-
 }

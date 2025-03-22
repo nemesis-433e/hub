@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Gramática Japonesa</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar gramática..." oninput="buscar()">
+        
+        <div class="database-filters">
+            <div class="toggle-all">
+                <button id="toggle-all-btn" onclick="toggleAllDatabases()">Marcar/Desmarcar Todas</button>
+            </div>
+            <div class="checkbox-container">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="donna-toki" value="Donna Toki" checked>
+                    <label for="donna-toki">Donna Toki</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="imabi" value="Imabi" checked>
+                    <label for="imabi">Imabi</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dojg" value="DOJG" checked>
+                    <label for="dojg">DOJG</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="hjg" value="HJG" checked>
+                    <label for="hjg">HJG</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="nihongo-kyoshi" value="Nihongo Kyoshi" checked>
+                    <label for="nihongo-kyoshi">Nihongo Kyoshi</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="bunpro" value="Bunpro" checked>
+                    <label for="bunpro">Bunpro</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <ul id="resultado"></ul>
+</body>
+</html>

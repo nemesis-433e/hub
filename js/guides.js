@@ -1,7 +1,25 @@
 // Toggle navigation menu
 document.querySelector('.hamburger').addEventListener('click', function () {
     const nav = document.querySelector('nav');
-    nav.classList.toggle('show');
+    if (window.innerWidth > 950){
+        if(nav.classList.contains('show')){
+            nav.classList.toggle('show');
+            setTimeout(() => {
+                nav.classList.toggle('invisible');
+            }, 90);
+        }else{
+            nav.classList.toggle('invisible');
+            setTimeout(() => {
+                nav.classList.toggle('show');
+            }, 1);
+        }
+    }else{
+        if(nav.classList.contains('invisible')){
+            nav.classList.toggle('invisible');
+        };
+        nav.classList.toggle('show');
+    }
+    
 //    document.querySelector('.hamburger').style.display = 'none'; // Hide hamburger when nav is open
 });
 
@@ -12,33 +30,26 @@ document.querySelector('.close-btn').addEventListener('click', function () {
     document.querySelector('.hamburger').style.display = 'block'; // Show hamburger when nav is closed
 });
 
-// Handle window resize
+// window resize
 function handleResize() {
     const nav = document.querySelector('nav');
-    const hamburger = document.querySelector('.hamburger');
 
-    if (window.innerWidth > 768) {
-        // For larger screens, ensure the navbar is visible and the hamburger is hidden
-        nav.classList.toggle('show'); // Remove the 'show' class if it exists
-       // nav.style.transform = 'translateX(0)'; // Reset transform 
-        hamburger.style.display = 'none'; // Hide the hamburger button
+    if (window.innerWidth > 950) {
+        if(!nav.classList.contains('show'))
+        {
+            nav.classList.toggle('show');
+        }
     } else {
-        hamburger.style.display = 'block'; // Hide the hamburger button
+        // hamburger.style.display = 'block'; 
         // For smaller screens, ensure the hamburger button is visible if the navbar is hidden
         if (nav.classList.contains('show')) {
-            nav.classList.toggle('show'); // Remove the 'show' class if it exists
-            
+            nav.classList.toggle('show');
         }
     }
 }
-
 // Attach the resize event listener
 window.addEventListener('resize', handleResize);
-
-// Call handleResize on initial load to set the correct state
 handleResize();
-
-// Translation dictionary for navbar items
 
 // Function to translate the navbar
 function translateNavbar(lang) {
@@ -80,5 +91,41 @@ window.addEventListener('load', () => {
 
     // Translate navbar based on the selected language
     const lang = document.querySelector('.idiom-selector').getAttribute('data-lang') || 'en';
-    translateNavbar(lang);
+    // translateNavbar(lang);
+    generateNavbar();
+});
+
+function generateNavbar() {
+    const navList = document.querySelector("nav");
+    navList.innerHTML = ""; // Clear previous items
+
+    const language = localStorage.getItem("lang") || "en";
+    // if (!translations[language]) return;
+
+    translations[language].forEach(section => {
+        // Add section title
+        let sectionTitle = document.createElement("li");
+        sectionTitle.classList.add("section-title");
+        sectionTitle.textContent = section.title;
+        navList.appendChild(sectionTitle);
+
+        // Add chapters
+        section.chapters.forEach(chapter => {
+            let chapterItem = document.createElement("li");
+            chapterItem.setAttribute("data-i18n", chapter.id);
+            chapterItem.textContent = chapter.title;
+            chapterItem.onclick = () => {
+                window.location.hash = chapter.id;
+                loadChapter(chapter.id);
+            };
+            navList.appendChild(chapterItem);
+        });
+    });
+}
+generateNavbar();
+
+document.querySelectorAll('.idiom-option').forEach(option => {
+    option.addEventListener('click', () => {
+        generateNavbar();
+    });
 });

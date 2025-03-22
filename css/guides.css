@@ -1,9 +1,8 @@
 
 nav {
     margin-top: 50px;
-    position: fixed;
     display: block;
-    width: 250px;
+    width: 350px;
     background: var(--background-color);
     color: var(--text-color);
     padding: 20px;
@@ -17,12 +16,19 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
+nav li {
     padding: 5px;
+    margin-left: 10px;
     cursor: pointer;
+    list-style-type: none;
+}
+.invisible{
+    display: none;
 }
 
 .section-title {
+    margin-left: 0px;
+    list-style-type: none;
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 15px;
@@ -33,7 +39,7 @@ nav ul li {
 
 .content {
     margin-top: 20px;
-    margin-left: 270px;
+    /* margin-left: 270px; */
     padding: 20px;
     flex-grow: 1;
     max-width: 650px;
@@ -42,7 +48,8 @@ h1{color: rgb(111, 1, 255);}
 h2{color: rgb(175, 114, 253);}
 .highlight{color: rgb(175, 114, 253); font-weight: bold;}
 .hamburger {
-    display: none;
+    /* display: none; */
+    display: block;
     font-weight: bolder;
     font-size: x-large;
     background: var(--top-bar);
@@ -74,10 +81,26 @@ h2{color: rgb(175, 114, 253);}
     padding: 5px 20px 5px;
     border-radius: 5px;
 }
+nav {
+    transform: translateX(-100%); /* Hide nav by default on mobile */
+}
+.hamburger {
+    display: block; /* Show hamburger on mobile */
+}
+nav.show {
+    transform: translateX(0); /* Show nav when .show class is added */
+}
+.content {
+    margin-left: 0;
+}
+nav.show .close-btn {
+    display: block; /* Show close button when nav is open */
+}
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     nav {
         transform: translateX(-100%); /* Hide nav by default on mobile */
+        position: fixed;
     }
     .hamburger {
         display: block; /* Show hamburger on mobile */
