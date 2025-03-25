@@ -122,10 +122,10 @@ function generateNavbar() {
         });
     });
 }
-generateNavbar();
 
-document.querySelectorAll('.idiom-option').forEach(option => {
-    option.addEventListener('click', () => {
-        generateNavbar();
-    });
-});
+generateNavbar();
+// document.querySelectorAll('.idiom-option').forEach(option => {
+//     option.addEventListener('click', () => {
+//         generateNavbar();
+//     });
+// });
