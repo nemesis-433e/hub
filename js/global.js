@@ -18,7 +18,7 @@ document.querySelectorAll('.idiom-option').forEach(option => {
 
         // Update the selected idiom flag
         const selectedFlag = document.querySelector('.selected-idiom img');
-        selectedFlag.src = `../files/flags/${lang === 'en' ? 'en' : 'br'}.svg`;
+        selectedFlag.src = `files/flags/${lang === 'en' ? 'en' : 'br'}.svg`;
         localStorage.setItem('lang', lang);
         
         changeLanguage(lang);
@@ -64,5 +64,5 @@ icon.classList.toggle('fa-sun', savedTheme === 'light');
 // Set initial language
 const savedLang = localStorage.getItem('lang') || 'en';
 document.querySelector('.idiom-selector').setAttribute('data-lang', savedLang);
-document.querySelector('.selected-idiom img').src= `../files/flags/${savedLang === 'en' ? 'en' : 'br'}.svg`;
+document.querySelector('.selected-idiom img').src= `files/flags/${savedLang === 'en' ? 'en' : 'br'}.svg`;
 changeLanguage(savedLang);
